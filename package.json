@@ -1,0 +1,32 @@
+{
+  "name": "uccx-chat-client",
+  "version": "0.1.0",
+  "description": "JavaScript client for UCCX Chat (using SocialMiner REST APIs)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 node src/index.js",
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ccondry/uccx-chat-client.git"
+  },
+  "keywords": [
+    "cisco",
+    "uccx",
+    "chat",
+    "socialminer"
+  ],
+  "author": "Coty Condry <ccondry@cisco.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ccondry/uccx-chat-client/issues"
+  },
+  "homepage": "https://gitlab.com/ccondry/uccx-chat-client#README",
+  "dependencies": {
+    "query-string": "^6.1.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5",
+    "xml2js": "^0.4.19"
+  }
+}

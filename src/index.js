@@ -90,7 +90,7 @@ module.exports = class UccxChatClient {
   // update handlers after construction
   setHandlers(handlers) {
     // callback handlers
-    this.handlers = Object.assign(this.handlers, params.handlers)
+    this.handlers = Object.assign(this.handlers, handlers)
   }
 
   start () {

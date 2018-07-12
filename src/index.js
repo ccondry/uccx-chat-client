@@ -120,8 +120,6 @@ module.exports = class UccxChatClient {
       }
     }).catch(e => {
       console.error('error', e.message)
-      // make sure we stop polling
-      this.stopPolling()
     })
   }
 

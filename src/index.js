@@ -112,7 +112,12 @@ module.exports = class UccxChatClient {
       followRedirect: false,
       qs
     }).then(response => {
-      this.startPolling()
+      if (response.statusCode === 302) {
+        this.startPolling()
+      } else {
+        console.log('failed to start uccx chat client at', this.urlBase, 'with', qs)
+        console.log('start uccx chat response message', response.message)
+      }
     }).catch(e => {
       console.error('error', e.message)
       // make sure we stop polling
@@ -139,7 +144,7 @@ module.exports = class UccxChatClient {
         // parse the events in the json
         this.parseEvents(jsonData.chatEvents)
       }).catch(e => {
-        console.log('session expired?', e)
+        console.log('session expired?', e.message)
         this.stopPolling()
       })
     }, 5000)

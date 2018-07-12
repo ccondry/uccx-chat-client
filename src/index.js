@@ -87,6 +87,12 @@ module.exports = class UccxChatClient {
     this.handlers = Object.assign(defaultHandlers, params.handlers)
   }
 
+  // update handlers after construction
+  setHandlers(handlers) {
+    // callback handlers
+    this.handlers = Object.assign(this.handlers, params.handlers)
+  }
+
   start () {
     console.log('creating UCCX chat client at', this.urlBase)
     // start a new chat session on UCCX/SocialMiner

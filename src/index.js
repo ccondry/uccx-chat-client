@@ -81,7 +81,7 @@ module.exports = class UccxChatClient {
     // customer's phone
     this.customerPhone = params.customerPhone || ''
     // author
-    this.author = params.author || this.customerName
+    this.author = params.author || ''
 
     // callback handlers
     this.handlers = Object.assign(defaultHandlers, params.handlers)

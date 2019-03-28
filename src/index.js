@@ -85,6 +85,9 @@ module.exports = class UccxChatClient {
 
     // callback handlers
     this.handlers = Object.assign(defaultHandlers, params.handlers)
+
+    // how often to poll UCCX server for new messages
+    this.pollingInterval = params.pollingInterval || 5000
   }
 
   // update handlers after construction
@@ -145,7 +148,7 @@ module.exports = class UccxChatClient {
         console.log('session expired?', e.message)
         this.stopPolling()
       })
-    }, 5000)
+    }, this.pollingInterval)
   }
 
   stopPolling () {
